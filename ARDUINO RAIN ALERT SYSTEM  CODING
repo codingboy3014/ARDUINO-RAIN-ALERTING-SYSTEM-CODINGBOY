@@ -1,0 +1,25 @@
+// Define pins
+const int rainSensorPin = A0; // Analog pin for rain sensor
+const int buzzerPin = 8;      // Digital pin for buzzer
+
+void setup() {
+  pinMode(rainSensorPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  Serial.begin(9600); // For monitoring in Serial Monitor
+}
+
+void loop() {
+  int rainValue = analogRead(rainSensorPin); // Read the rain sensor value
+  Serial.print("Rain Sensor Value: ");
+  Serial.println(rainValue);
+
+  if (rainValue < 500) { // Adjust the threshold based on your sensor's sensitivity
+    digitalWrite(buzzerPin, HIGH); // Turn on the buzzer
+    Serial.println("Rain detected! Buzzer ON");
+  } else {
+    digitalWrite(buzzerPin, LOW); // Turn off the buzzer
+    Serial.println("No rain detected. Buzzer OFF");
+  }
+
+  delay(1000); // Delay for stability
+}
