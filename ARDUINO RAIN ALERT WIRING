@@ -1,0 +1,10 @@
+Components:
+Arduino Uno
+Rain sensor module
+Buzzer
+
+
+Connections:   
+Connect the rain sensor's analog output to the Arduino's A0 pin.
+Connect the VCC and GND of the rain sensor to the 5V and GND pins of the Arduino.
+Connect the positive terminal of the buzzer to digital pin 8 of the Arduino and the negative terminal to GND.
